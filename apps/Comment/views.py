@@ -75,6 +75,14 @@ def DeleteComment(slug, id):
         article = Article.query.filter(Article.slug == slug).first()
         following = False
         if Comment.query.filter(Comment.id == id, Comment.article_id == article.id):
+            if not Comment.query.filter(Comment.user_id==userId).first():
+                return {
+                    "errors": {
+                        "body": [
+                            "can't access"
+                        ]
+                    }
+                }, 401
             comment = Comment.query.filter(Comment.id == id, Comment.article_id == article.id).first()
             user = User.query.filter(User.id == comment.user_id).first()
             if Follow.query.filter(Follow.followid == session.get('id'), Follow.userid == user.id).first():
