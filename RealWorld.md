@@ -1,5 +1,9 @@
 # RealWorld
 
+github:[JingHuaZhao111/realworld (github.com)](https://github.com/JingHuaZhao111/realworld)
+
+接口链接: https://www.apifox.cn/apidoc/shared-c0bd11df-b292-4192-8be8-ca5013638ae3  访问密码 : mpz03vpV 
+
 ## 数据库解释:
 
 ![image-20220325150750445](RealWorld.assets/image-20220325150750445.png)
@@ -31,6 +35,8 @@
 获取当前用户:利用session从数据库中查找到对应的当前用户的所有信息并返回,也必须处于登陆状态
 
 更新用户:只能更新邮箱,自我介绍跟图片,必须处于登陆状态
+
+注销用户:注销该用户
 
 ### 关注
 
