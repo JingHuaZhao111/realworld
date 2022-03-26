@@ -73,7 +73,19 @@ def Authentication():
         }
                }, 603
 
-
+@user_blue.route('/api/users/logoff',methods=('GET',))
+def Logoff():
+    if 'id' in session:
+        session.pop('id');
+        return {"user":"log off successful"}
+    else:
+        return {
+                   "errors": {
+                       "body": [
+                           "can't access"
+                       ]
+                   }
+               }, 401
 @user_blue.route('/api/user', methods=('GET',))
 def GetCurrentUser():
     if 'id' in session:
